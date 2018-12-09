@@ -28,4 +28,7 @@ var apps = function(text)
   //c.print("\r");
 }
 c.input = apps;
-apps('help');
+window.onload = function() // wait load page
+{
+  apps('help');
+}
