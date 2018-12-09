@@ -1,0 +1,34 @@
+.console
+{
+  background: black;
+  color: white;
+  font-size:16px;
+  padding:3px;
+  font-family:"Monospace";
+  overflow-y:auto;
+  width:600px;
+  height:300px;
+}
+.console .symbol
+{
+  float:left;
+  height:18px;
+}
+
+.console .symbol.right
+{
+  border-right:1px solid #FFF;
+  margin-right:-1px;
+
+}
+
+.console .symbol.left
+{
+  border-left:1px solid #FFF;
+  margin-left:-1px;
+}
+
+.console .symbol.null
+{
+  border-left:1px solid #FFF;
+}
