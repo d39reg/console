@@ -1,10 +1,14 @@
+@font-face {
+    font-family: ubuntu;
+    src: url(//www.cresoft.org/console/ubuntu.ttf);
+}
 .console
 {
   background: black;
   color: white;
   font-size:16px;
   padding:3px;
-  font-family:"Monospace";
+  font-family:"ubuntu";
   overflow-y:auto;
   width:600px;
   height:300px;
