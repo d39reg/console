@@ -104,6 +104,7 @@ function console(object)
 
     backPosition = o;
     arrayPosition.splice(currentPosition++,0,o);
+    object.scrollTop = 9999;
   });
 
   window.addEventListener("keydown",function(event)
