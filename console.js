@@ -192,5 +192,5 @@ function console(object)
     countTurn = !countTurn;
     if(countTurn) backPosition.className = "symbol right";
     else backPosition.className = "symbol";
-  }
+  });
 }
