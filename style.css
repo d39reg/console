@@ -8,6 +8,7 @@
   overflow-y:auto;
   width:600px;
   height:300px;
+  resize: both;
 }
 .console .symbol
 {
