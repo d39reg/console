@@ -33,6 +33,7 @@ function console(object)
     return object.innerText;
   }
   this.input = null; // event input
+  this.delay = 500;
   this.exit = function()
   {
     blockConsole = true;
@@ -190,7 +191,11 @@ function console(object)
   {
     if(backPosition == null) return true;
     countTurn = !countTurn;
-    if(countTurn) backPosition.className = "symbol right";
+    if(countTurn) 
+    {
+      if(currentPosition) backPosition.className = "symbol right";
+      else backPosition.className = "symbol left";
+    }
     else backPosition.className = "symbol";
-  },500);
+  },this.delay);
 }
