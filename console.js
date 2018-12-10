@@ -59,7 +59,7 @@ function console(object)
     {
 
       var s = text.charAt(i);
-      if(s == "\r") 
+      if(s == "\r" || s == "\n") 
       {
         var o = document.createElement('BR');
         object.appendChild(o);
