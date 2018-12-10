@@ -74,7 +74,7 @@ function console(object)
       }
       object.scrollTop = 9999;
     }
-    nullSymbol.className = "symbol";
+    object.removeChild(nullSymbol);
     nullSymbol = document.createElement('DIV');
     nullSymbol.className = "symbol right";
     object.appendChild(nullSymbol);
