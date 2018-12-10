@@ -156,7 +156,7 @@ function console(object)
           for(key in arrayPosition)
           {
             var symbolNode = arrayPosition[key];
-            if(ord[symbolNode.innerText] == 194) text += ' ';
+            if(b[symbolNode.innerText] == 194) text += ' ';
             else text += symbolNode.innerText;
           }
           globalThis.input(text);
