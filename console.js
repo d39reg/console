@@ -185,4 +185,12 @@ function console(object)
       break;
     }
   });
+  var countTurn = false;
+  setInterval(function()
+  {
+    if(backPosition == null) return true;
+    countTurn = !countTurn;
+    if(countTurn) backPosition.className = "symbol right";
+    else backPosition.className = "symbol";
+  }
 }
