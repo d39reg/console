@@ -71,6 +71,7 @@ function console(object)
         o.innerHTML = sym(text.charAt(i));
         object.appendChild(o);
       }
+      object.scrollTop = 9999;
     }
     nullSymbol.className = "symbol";
     nullSymbol = document.createElement('DIV');
