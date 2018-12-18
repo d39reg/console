@@ -53,7 +53,7 @@ function console(object)
 
     backPosition = nullSymbol;
   }
-  this.print = function(text) // print text console
+  this.print = function(text, color) // print text console
   {
     if(blockConsole) return false;
     for(var i = 0; i < text.length; i++)
@@ -69,6 +69,7 @@ function console(object)
       {
         var o = document.createElement('DIV');
         o.className = "symbol";
+        if(color != undfined) o.style.color = color;
         o.innerHTML = sym(text.charAt(i));
         object.appendChild(o);
       }
