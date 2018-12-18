@@ -33,6 +33,32 @@ function console(object)
   {
     return object.innerText;
   }
+  this.left = function()
+  {
+    if(currentPosition)
+    {
+      arrayPosition[--currentPosition].className = "symbol";
+      if(!currentPosition) 
+      {
+        backPosition = arrayPosition[0];
+        backPosition.className = "symbol left";
+      }
+      else
+      {
+        backPosition = arrayPosition[currentPosition - 1];
+        backPosition.className = "symbol right";
+      }
+    }
+  }
+  this.right = function()
+  {
+    if(currentPosition < arrayPosition.length)
+    {
+      if(currentPosition) arrayPosition[currentPosition - 1].className = "symbol";
+      backPosition = arrayPosition[currentPosition++];
+      backPosition.className = "symbol right";
+    }
+  }
   this.input = null; // event input
   this.delay = 500;
   this.exit = function()
@@ -122,7 +148,7 @@ function console(object)
           arrayPosition.splice(currentPosition, 1);
           arrayPosition[currentPosition-1].className = "symbol right";
         }
-        else if(currentPosition == 1 && arrayPosition.length == 1)
+        else if(currentPosition == 1 && arrayPosition.length == 1) // right
         {
           object.removeChild(arrayPosition[0]);
           nullSymbol.className = "symbol right";
@@ -130,7 +156,7 @@ function console(object)
           currentPosition = 0;
           backPosition = nullSymbol;
         }
-        else if(currentPosition == 1)
+        else if(currentPosition == 1) // left
         {
           object.removeChild(arrayPosition[0]);
           arrayPosition.splice(0,1);
@@ -165,28 +191,10 @@ function console(object)
         object.scrollTop = 9999;
       break;
       case 37: // left
-        if(currentPosition)
-        {
-          arrayPosition[--currentPosition].className = "symbol";
-          if(!currentPosition) 
-          {
-            backPosition = arrayPosition[0];
-            backPosition.className = "symbol left";
-          }
-          else
-          {
-            backPosition = arrayPosition[currentPosition - 1];
-            backPosition.className = "symbol right";
-          }
-        }
+        globalThis.left();
       break;
       case 39: // right
-        if(currentPosition < arrayPosition.length)
-        {
-          if(currentPosition) arrayPosition[currentPosition - 1].className = "symbol";
-          backPosition = arrayPosition[currentPosition++];
-          backPosition.className = "symbol right";
-        }
+        globalThis.right();
       break;
     }
   });
