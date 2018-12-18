@@ -69,7 +69,7 @@ function console(object)
       {
         var o = document.createElement('DIV');
         o.className = "symbol";
-        if(color != undfined) o.style.color = color;
+        if(color != undefined) o.style.color = color;
         o.innerHTML = sym(text.charAt(i));
         object.appendChild(o);
       }
