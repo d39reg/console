@@ -87,7 +87,7 @@ function console(object)
       var s = text.charAt(i);
       if(s == "\r" || s == "\n") 
       {
-        var o = document.createElement('BR');
+        var o = document.createElement('DIV');
         object.appendChild(o);
       }
       else 
