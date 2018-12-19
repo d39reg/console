@@ -102,7 +102,7 @@ function console(object)
     }
     object.removeChild(nullSymbol);
     nullSymbol = document.createElement('DIV');
-    nullSymbol.className = "symbol right";
+    nullSymbol.className = "symbol";
     object.appendChild(nullSymbol);
     backPosition.className = "symbol";
     backPosition = nullSymbol;
@@ -170,7 +170,7 @@ function console(object)
         object.appendChild(o);
         object.removeChild(nullSymbol);
         nullSymbol = document.createElement('DIV');
-        nullSymbol.className = "symbol right";
+        nullSymbol.className = "symbol left";
         object.appendChild(nullSymbol);
 
         if(globalThis.input != null)
