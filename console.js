@@ -8,7 +8,7 @@ function console(object)
   var blockConsole = false;
 
   var nullSymbol = document.createElement('DIV');
-  nullSymbol.className = "symbol right";
+  nullSymbol.className = "symbol left";
   object.appendChild(nullSymbol);
 
   backPosition = nullSymbol;
