@@ -8,7 +8,6 @@ function console(object)
   var blockConsole = false;
 
   var nullSymbol = document.createElement('DIV');
-  //nullSymbol.className = "symbol left";
   object.appendChild(nullSymbol);
 
   backPosition = nullSymbol;
@@ -198,7 +197,7 @@ function console(object)
       break;
     }
   });
-  var countTurn = false;
+  var countTurn = true;
   setInterval(function()
   {
     if(backPosition == null) return true;
