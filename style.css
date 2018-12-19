@@ -22,19 +22,19 @@
 
 .console .symbol.right
 {
-  border-right:1px dashed #FFF;
+  border-right:1px dotted #FFF;
   margin-right:-1px;
 
 }
 
 .console .symbol.left
 {
-  border-left:1px dashed #FFF;
+  border-left:1px dotted #FFF;
   margin-left:-1px;
 }
 
 .console .symbol.null
 {
-  border-left:1px dashed #FFF;
+  border-left:1px dotted #FFF;
   margin-left:-1px;
 }
