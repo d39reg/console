@@ -151,7 +151,7 @@ function console(object)
         else if(currentPosition == 1 && arrayPosition.length == 1) // right
         {
           object.removeChild(arrayPosition[0]);
-          nullSymbol.className = "symbol right";
+          nullSymbol.className = "symbol left";
           arrayPosition = [];
           currentPosition = 0;
           backPosition = nullSymbol;
