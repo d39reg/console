@@ -30,11 +30,11 @@
 .console .symbol.left
 {
   border-left:1px solid #FFF;
-  margin-left:-1px;
+  padding-left:-1px;
 }
 
 .console .symbol.null
 {
   border-left:1px solid #FFF;
-  margin-right:-1px;
+  padding-left:-1px;
 }
