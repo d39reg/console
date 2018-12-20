@@ -79,7 +79,7 @@ function console(object)
 
     backPosition = nullSymbol;
   }
-  this.print = function(text, color) // print text console
+  this.print = function(text, color, bgcolor) // print text console
   {
     if(blockConsole) return false;
     for(var i = 0; i < text.length; i++)
@@ -96,6 +96,7 @@ function console(object)
         var o = document.createElement('SPAN');
         o.className = "symbol";
         if(color != undefined) o.style.color = color;
+        if(bgcolor != undefined) o.style.backgroundColor = bgcolor;
         o.innerHTML = sym(text.charAt(i));
         object.appendChild(o);
       }
