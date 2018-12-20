@@ -8,7 +8,7 @@ function console(object)
   var blockConsole = false;
   var positionAutoScroll = 9999;
 
-  var nullSymbol = document.createElement('DIV');
+  var nullSymbol = document.createElement('SPAN');
   object.appendChild(nullSymbol);
 
   backPosition = nullSymbol;
@@ -73,7 +73,7 @@ function console(object)
     currentPosition = 0;
     blockConsole = false;
 
-    nullSymbol = document.createElement('DIV');
+    nullSymbol = document.createElement('SPAN');
     nullSymbol.className = "symbol right";
     object.appendChild(nullSymbol);
 
@@ -88,12 +88,12 @@ function console(object)
       var s = text.charAt(i);
       if(s == "\r" || s == "\n") 
       {
-        var o = document.createElement('DIV');
+        var o = document.createElement('SPAN');
         object.appendChild(o);
       }
       else 
       {
-        var o = document.createElement('DIV');
+        var o = document.createElement('SPAN');
         o.className = "symbol";
         if(color != undefined) o.style.color = color;
         o.innerHTML = sym(text.charAt(i));
@@ -102,7 +102,7 @@ function console(object)
       object.scrollTop = positionAutoScroll;
     }
     object.removeChild(nullSymbol);
-    nullSymbol = document.createElement('DIV');
+    nullSymbol = document.createElement('SPAN');
     nullSymbol.className = "symbol";
     object.appendChild(nullSymbol);
     backPosition.className = "symbol";
@@ -120,7 +120,7 @@ function console(object)
     var s = sym(event.key);
     if(!s) return;
 
-    var o = document.createElement("DIV");
+    var o = document.createElement("SPAN");
     o.className = "symbol right";
     o.innerHTML = s;
 
@@ -170,7 +170,7 @@ function console(object)
         var o = document.createElement("BR");
         object.appendChild(o);
         object.removeChild(nullSymbol);
-        nullSymbol = document.createElement('DIV');
+        nullSymbol = document.createElement('SPAN');
         nullSymbol.className = "symbol left";
         object.appendChild(nullSymbol);
 
