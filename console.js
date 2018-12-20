@@ -6,6 +6,7 @@ function console(object)
   var backPosition = null;
   var currentPosition = 0;
   var blockConsole = false;
+  var positionAutoScroll = 9999;
 
   var nullSymbol = document.createElement('DIV');
   object.appendChild(nullSymbol);
@@ -98,7 +99,7 @@ function console(object)
         o.innerHTML = sym(text.charAt(i));
         object.appendChild(o);
       }
-      object.scrollTop = 9999;
+      object.scrollTop = positionAutoScroll;
     }
     object.removeChild(nullSymbol);
     nullSymbol = document.createElement('DIV');
@@ -130,7 +131,7 @@ function console(object)
 
     backPosition = o;
     arrayPosition.splice(currentPosition++,0,o);
-    object.scrollTop = 9999;
+    object.scrollTop = positionAutoScroll;
   });
 
   window.addEventListener("keydown",function(event)
@@ -187,7 +188,7 @@ function console(object)
         arrayPosition = [];
         currentPosition = 0;
         backPosition = nullSymbol;
-        object.scrollTop = 9999;
+        object.scrollTop = positionAutoScroll;
       break;
       case 37: // left
         globalThis.left();
