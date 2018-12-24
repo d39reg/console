@@ -29,6 +29,7 @@ function console(object)
   // ---
 
   // prototypes for constructor
+  this.blink = true;
   this.getText = function() // get full text console
   {
     return object.innerText;
@@ -203,6 +204,7 @@ function console(object)
   setInterval(function()
   {
     if(backPosition == null) return true;
+    if(!globalThis.blink) return true;
     countTurn = !countTurn;
     if(countTurn) 
     {
