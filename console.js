@@ -204,9 +204,8 @@ function console(object)
   setInterval(function()
   {
     if(backPosition == null) return true;
-    if(!globalThis.blink) return true;
     countTurn = !countTurn;
-    if(countTurn) 
+    if(countTurn || !globalThis.blink) 
     {
       if(currentPosition) backPosition.className = "symbol right";
       else backPosition.className = "symbol left";
