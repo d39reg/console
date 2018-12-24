@@ -13,6 +13,8 @@
   width:600px;
   height:300px;
   resize: both;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .console .symbol
 {
