@@ -145,7 +145,7 @@ function console(object)
   window.addEventListener("keyup",function(event)
   {
     alert(event.keyCode);
-  }
+  });
   window.addEventListener("keydown",function(event)
   {
     if(blockConsole) return false;
