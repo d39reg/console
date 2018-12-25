@@ -122,7 +122,7 @@ function console(object)
 function(b,a,f,c,e,d,k){if("%%"==b)return"%";e=!1;for(var g="",h=!1,m=!1,t=0;f&&t<f.length;t++)switch(f.charAt(t)){case " ":g=" ";break;case "+":g="+";break;case "-":e=!0;break;case "0":h=!0;break;case "#":m=!0}c=c?"*"==c?+l[p++]:"*"==c.charAt(0)?+l[c.slice(1,-1)]:+c:0;0>c&&(c=-c,e=!0);if(!isFinite(c))throw Error("sprintf: (minimum-)width must be finite");d=d?"*"==d?+l[p++]:"*"==d.charAt(0)?+l[d.slice(1,-1)]:+d:-1<"fFeE".indexOf(k)?6:"d"==k?0:void 0;a=a?l[a.slice(0,-1)]:l[p++];switch(k){case "s":return u(String(a),
 e,c,d,h);case "c":return u(String.fromCharCode(+a),e,c,d,h);case "b":return n(a,2,m,e,c,d,h);case "o":return n(a,8,m,e,c,d,h);case "x":return n(a,16,m,e,c,d,h);case "X":return n(a,16,m,e,c,d,h).toUpperCase();case "u":return n(a,10,m,e,c,d,h);case "i":case "d":return b=parseInt(+a),g=0>b?"-":g,a=g+q(String(Math.abs(b)),d,"0",!1),r(a,g,e,c,h);case "e":case "E":case "f":case "F":case "g":case "G":return b=+a,g=0>b?"-":g,a=["toExponential","toFixed","toPrecision"]["efg".indexOf(k.toLowerCase())],k=["toString",
 "toUpperCase"]["eEfFgG".indexOf(k)%2],a=g+Math.abs(b)[a](d),r(a,g,e,c,h)[k]();default:return b}})};
-  this.printf = function(){globalThis.print(sprintf.apply(this,arguments));}
+  this.printf = function(txt,c1,c2){globalThis.print(sprintf.apply(this,arguments),c1,c2);}
   // handlers console
   window.addEventListener("keypress",function(event)
   {
