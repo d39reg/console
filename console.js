@@ -198,7 +198,7 @@ function console(object)
             var symbolNode = arrayPosition[key];
             text += symbolNode.innerText;
           }
-          globalThis.input(text);
+          globalThis.input(text.replace(new RegExp(String.fromCharCode(160),"g")," "););
         }
 
         arrayPosition = [];
