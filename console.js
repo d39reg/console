@@ -126,7 +126,6 @@ function console(object)
     if(blockConsole) return false;
     var s = sym(event.key);
     if(!s) return;
-alert(event.key);
     var o = document.createElement("SPAN");
     o.className = "symbol right";
     o.innerHTML = s;
@@ -143,9 +142,12 @@ alert(event.key);
     object.scrollTop = positionAutoScroll;
   });
 
-  window.addEventListener("keydown",function(event)
+  window.addEventListener("keyup",function(event)
   {
     alert(event.keyCode);
+  }
+  window.addEventListener("keydown",function(event)
+  {
     if(blockConsole) return false;
     switch(event.keyCode)
     {
@@ -198,6 +200,9 @@ alert(event.key);
         currentPosition = 0;
         backPosition = nullSymbol;
         object.scrollTop = positionAutoScroll;
+      break;
+      case 17: // cntr
+        
       break;
       case 37: // left
         globalThis.left();
