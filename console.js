@@ -124,9 +124,10 @@ function console(object)
   window.addEventListener("keypress",function(event)
   {
     if(blockConsole) return false;
-    var s = null;
+    var s = false;
     if(event.ctrlKey)
     {
+        alert(1);
       s = sym(event.key.charAt(1));
     }
     else s = sym(event.key);
