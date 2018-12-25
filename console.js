@@ -82,7 +82,7 @@ function console(object)
 
     backPosition = nullSymbol;
   }
-  this.print = function(text, color, bgcolor) // print text console
+  this.print = function(text, color, bgcolor, bold) // print text console
   {
     if(blockConsole) return false;
     for(var i = 0; i < text.length; i++)
@@ -98,6 +98,7 @@ function console(object)
       {
         var o = document.createElement('SPAN');
         o.className = "symbol";
+        if(bold) o.style.fontWeight = 'bold';
         if(color != undefined) o.style.color = color;
         else o.style.color = globalThis.color;
         if(bgcolor != undefined) o.style.backgroundColor = bgcolor;
