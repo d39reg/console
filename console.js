@@ -34,6 +34,8 @@ function console(object)
   {
     return object.innerText;
   }
+  this.fillcolor = 'none';
+  this.color = '#FFF';
   this.left = function()
   {
     if(currentPosition)
@@ -125,7 +127,9 @@ function console(object)
     var o = document.createElement("SPAN");
     o.className = "symbol right";
     o.innerHTML = s;
-
+    o.style.color = globalThis.color;
+    o.style.backgroundColor = globalThis.fillcolor;
+    
     if(backPosition != null) backPosition.className = "symbol";
 
     if(currentPosition) insertAfter(o, arrayPosition[currentPosition - 1]);
