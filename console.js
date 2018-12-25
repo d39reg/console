@@ -99,7 +99,9 @@ function console(object)
         var o = document.createElement('SPAN');
         o.className = "symbol";
         if(color != undefined) o.style.color = color;
+        else o.style.color = globalThis.color;
         if(bgcolor != undefined) o.style.backgroundColor = bgcolor;
+        else o.style.backgroundColor = globalThis.fillcolor;
         o.innerHTML = sym(text.charAt(i));
         object.appendChild(o);
       }
