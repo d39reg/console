@@ -10,7 +10,7 @@ function console(object)
 
   var nullSymbol = document.createElement('SPAN');
   object.appendChild(nullSymbol);
-
+  object.oncontextmenu = function(){return false;}
   backPosition = nullSymbol;
   // ---
 
