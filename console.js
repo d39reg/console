@@ -124,13 +124,7 @@ function console(object)
   window.addEventListener("keypress",function(event)
   {
     if(blockConsole) return false;
-    var s = false;
-    if(event.ctrlKey)
-    {
-        alert(1);
-      s = sym(event.key.charAt(1));
-    }
-    else s = sym(event.key);
+    var s = sym(event.key);
     if(!s) return;
 
     var o = document.createElement("SPAN");
@@ -153,6 +147,7 @@ function console(object)
   {
     //alert(event.keyCode);
     if(blockConsole) return false;
+    if(event.ctrlKey) alert(1);
     switch(event.keyCode)
     {
       case 8: // delete
