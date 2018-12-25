@@ -144,7 +144,12 @@ function console(object)
 
   window.addEventListener("keyup",function(event)
   {
-    alert(event.keyCode);
+    switch(event.keyCode)
+    {
+      case 17: // cntr
+        
+      break;
+    }
   });
   window.addEventListener("keydown",function(event)
   {
