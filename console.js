@@ -126,7 +126,7 @@ function console(object)
     if(blockConsole) return false;
     var s = sym(event.key);
     if(!s) return;
-
+alert(event.key);
     var o = document.createElement("SPAN");
     o.className = "symbol right";
     o.innerHTML = s;
@@ -145,9 +145,8 @@ function console(object)
 
   window.addEventListener("keydown",function(event)
   {
-    //alert(event.keyCode);
+    alert(event.keyCode);
     if(blockConsole) return false;
-    if(event.ctrlKey) alert(1);
     switch(event.keyCode)
     {
       case 8: // delete
