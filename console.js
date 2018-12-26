@@ -37,6 +37,8 @@ function console(object)
   }
   this.fillcolor = 'none';
   this.color = '#FFF';
+  this.keydown = null;
+  this.keyup = null;
   this.left = function()
   {
     if(currentPosition)
@@ -145,7 +147,11 @@ function console(object)
 
   window.addEventListener("keyup",function(event)
   {
-    alert(event.keyCode);
+    if(event.ctrlKey)
+    {
+      if(globalThis.keyup != null) globalThis.keyup(event.keyCode);
+      return;
+    }
     switch(event.keyCode)
     {
       case 17: // cntr
@@ -156,6 +162,11 @@ function console(object)
   window.addEventListener("keydown",function(event)
   {
     if(blockConsole) return false;
+    if(event.ctrlKey)
+    {
+      if(globalThis.keydown != null) globalThis.keydown(event.keyCode);
+      return;
+    }
     switch(event.keyCode)
     {
       case 8: // delete
