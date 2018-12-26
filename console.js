@@ -210,6 +210,7 @@ function console(object)
         backPosition = o;
         arrayPosition.splice(currentPosition++,0,o);
         object.scrollTop = positionAutoScroll;
+        event.preventDefault();
         return false;
       break;
       case 13: // enter
