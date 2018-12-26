@@ -125,7 +125,6 @@ function console(object)
   window.addEventListener("keypress",function(event)
   {
     if(blockConsole) return false;
-    alert(event.key);
     var s = sym(event.key);
     if(!s) return;
     var o = document.createElement("SPAN");
@@ -146,6 +145,7 @@ function console(object)
 
   window.addEventListener("keyup",function(event)
   {
+    alert(event.keyCode);
     switch(event.keyCode)
     {
       case 17: // cntr
