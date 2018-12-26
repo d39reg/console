@@ -2,7 +2,7 @@
     font-family: ubuntu;
     src: url(//www.cresoft.org/console/ubuntu.ttf);
 }
-.console
+div.console
 {
   user-select: none;
   -moz-user-select: none;
@@ -21,25 +21,25 @@
   overflow-wrap: break-word;
   cursor: default;
 }
-.console .symbol
+div.console span.symbol
 {
   height:18px;
 }
 
-.console .symbol.right
+div.console span.symbol.right
 {
   border-right:1px dotted #FFF;
   margin-right:-1px;
 
 }
 
-.console .symbol.left
+div.console span.symbol.left
 {
   border-left:1px dotted #FFF;
   margin-left:-1px;
 }
 
-.console .symbol.null
+div.console span.symbol.null
 {
   border-left:1px dotted #FFF;
   margin-left:-1px;
