@@ -194,6 +194,10 @@ function console(object)
           backPosition = arrayPosition[0];
         }
       break;
+      case 9: // tab
+        alert(1);
+        return false;
+      break;
       case 13: // enter
         backPosition.className = "symbol";
         var o = document.createElement("BR");
