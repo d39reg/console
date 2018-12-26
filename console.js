@@ -125,6 +125,7 @@ function console(object)
   window.addEventListener("keypress",function(event)
   {
     if(blockConsole) return false;
+    alert(event.key);
     var s = sym(event.key);
     if(!s) return;
     var o = document.createElement("SPAN");
