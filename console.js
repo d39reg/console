@@ -66,6 +66,7 @@ function console(object)
     }
   }
   this.input = null; // event input
+  this.getch = null; // event getch
   this.delay = 500;
   this.exit = function()
   {
