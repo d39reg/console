@@ -149,7 +149,7 @@ function console(object)
   {
     if(event.ctrlKey)
     {
-      if(globalThis.keyup != null) globalThis.keyup(event.keyCode);
+      if(globalThis.keyup != null) return globalThis.keyup(event.keyCode);
       return;
     }
     switch(event.keyCode)
@@ -164,7 +164,7 @@ function console(object)
     if(blockConsole) return false;
     if(event.ctrlKey)
     {
-      if(globalThis.keydown != null) globalThis.keydown(event.keyCode);
+      if(globalThis.keydown != null) return globalThis.keydown(event.keyCode);
       return;
     }
     switch(event.keyCode)
