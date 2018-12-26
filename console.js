@@ -24,7 +24,7 @@ function console(object)
   {
     if(s.length > 1) return false;
     if(s == ' ') return '&nbsp;';
-    if(s == "\t") return '&#9;';
+    if(s == "\t") return '&nbsp;&nbsp;&nbsp;&nbsp;';
     return s;
   }
   // ---
