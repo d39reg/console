@@ -195,7 +195,21 @@ function console(object)
         }
       break;
       case 9: // tab
-        alert(1);
+        if(blockConsole) return false;
+        var o = document.createElement("SPAN");
+        o.className = "symbol right";
+        o.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";
+        o.style.color = globalThis.color;
+        o.style.backgroundColor = globalThis.fillcolor;
+
+        if(backPosition != null) backPosition.className = "symbol";
+
+        if(currentPosition) insertAfter(o, arrayPosition[currentPosition - 1]);
+        else object.insertBefore(o, backPosition);
+
+        backPosition = o;
+        arrayPosition.splice(currentPosition++,0,o);
+        object.scrollTop = positionAutoScroll;
         return false;
       break;
       case 13: // enter
