@@ -3,6 +3,7 @@ function console(object)
   // default variable init
   var globalThis = this; // pointer on the object
   var arrayPosition = [];
+  var nbsp = String.fromCharCode(160);
   var backPosition = null;
   var currentPosition = 0;
   var blockConsole = false;
@@ -192,11 +193,13 @@ function console(object)
 
         if(globalThis.input != null)
         {
-          var text = '';
+          var text = '', s;
           for(key in arrayPosition)
           {
             var symbolNode = arrayPosition[key];
-            text += symbolNode.innerText;
+            s = symbolNode.innerText;
+            if(s == nbsp) text += ' ';
+            else text += s;
           }
           globalThis.input(text.replace(new RegExp(String.fromCharCode(160),"g")," "));
         }
