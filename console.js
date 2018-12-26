@@ -201,7 +201,7 @@ function console(object)
             if(s == nbsp) text += ' ';
             else text += s;
           }
-          globalThis.input(text.replace(new RegExp(String.fromCharCode(160),"g")," "));
+          globalThis.input(text);
         }
 
         arrayPosition = [];
