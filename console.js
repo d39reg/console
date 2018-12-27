@@ -17,7 +17,7 @@ function console(object)
   // ---
   object.onfocus = function()
   {
-    tempFunctionDocument = document.onkeydown;
+    tempFunctionDocument = document.onkeydown;alert(1);
     document.onkeydown = function(){ return false; }
   }
   object.onblur = function()
