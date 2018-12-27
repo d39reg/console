@@ -149,6 +149,7 @@ function console(object)
     var s = sym(event.key);
     if(!s) return;
     var o = document.createElement("SPAN");
+    o.setAttribute('onclick', '');
     o.className = "symbol right";
     o.innerHTML = s;
     o.style.color = globalThis.color;
