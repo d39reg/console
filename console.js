@@ -27,7 +27,7 @@ function console(object)
   }
   object.onblur = function()
   {
-    focusBlock = false;
+    focusBlock = true;
     tempBlink = globalThis.blink;
     globalThis.blink = false;
     //document.onkeydown = tempFunctionDocument;
