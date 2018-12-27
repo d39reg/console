@@ -11,6 +11,7 @@ function console(object)
   var tempFunctionDocument = document.onkeydown;
 
   var nullSymbol = document.createElement('SPAN');
+  object.setAttribute('tabindex','-1');
   object.appendChild(nullSymbol);
   object.oncontextmenu = function(){return false;}
   backPosition = nullSymbol;
