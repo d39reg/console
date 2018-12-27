@@ -283,4 +283,5 @@ function console(object)
     }
     else backPosition.className = "symbol";
   },this.delay);
+  object.autofocus = true;
 }
