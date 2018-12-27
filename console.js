@@ -10,7 +10,7 @@ function console(object)
   var positionAutoScroll = 9999;
   var focusBlock = true;
   var tempFunctionDocument = document.onkeydown;
-  var tempBlink = false;
+  var tempBlink = true;
 
   var nullSymbol = document.createElement('SPAN');
   object.setAttribute('tabindex','-1');
@@ -47,7 +47,7 @@ function console(object)
   // ---
 
   // prototypes for constructor
-  this.blink = true;
+  this.blink = false;
   this.getText = function() // get full text console
   {
     return object.innerText;
