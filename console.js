@@ -8,6 +8,7 @@ function console(object)
   var currentPosition = 0;
   var blockConsole = false;
   var positionAutoScroll = 9999;
+  var focusBlock = true;
   var tempFunctionDocument = document.onkeydown;
 
   var nullSymbol = document.createElement('SPAN');
@@ -18,11 +19,13 @@ function console(object)
   // ---
   object.onfocus = function()
   {
-    tempFunctionDocument = document.onkeydown;alert(1);
+    tempFunctionDocument = document.onkeydown;
+    focusBlock = false;
     document.onkeydown = function(){ return false; }
   }
   object.onblur = function()
   {
+    focusBlock = true;
     document.onkeydown = tempFunctionDocument;
   }
   // functions for addition symbols in console
@@ -137,7 +140,7 @@ function console(object)
   // handlers console
   window.addEventListener("keypress",function(event)
   {
-    if(blockConsole) return false;
+    if(blockConsole || focusBlock) return false;
     var s = sym(event.key);
     if(!s) return;
     var o = document.createElement("SPAN");
@@ -158,6 +161,7 @@ function console(object)
 
   window.addEventListener("keyup",function(event)
   {
+    if(blockConsole || focusBlock) return false;
     if(event.ctrlKey)
     {
       if(globalThis.keyup != null) return globalThis.keyup(event.keyCode);
@@ -172,7 +176,7 @@ function console(object)
   });
   window.addEventListener("keydown",function(event)
   {
-    if(blockConsole) return false;
+    if(blockConsole || focusBlock) return false;
     if(event.ctrlKey)
     {
       if(globalThis.keydown != null) return globalThis.keydown(event.keyCode);
