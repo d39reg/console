@@ -8,7 +8,7 @@ function console(object)
   var currentPosition = 0;
   var blockConsole = false;
   var positionAutoScroll = 9999;
-  var focusBlock = false;
+  var focusBlock = true;
   var tempFunctionDocument = document.onkeydown;
 
   var nullSymbol = document.createElement('SPAN');
@@ -20,13 +20,13 @@ function console(object)
   object.onfocus = function()
   {
     tempFunctionDocument = document.onkeydown;
-    //focusBlock = false;
-    document.onkeydown = function(){ return false; }
+    focusBlock = false;
+   // document.onkeydown = function(){ return false; }
   }
   object.onblur = function()
   {
-    //focusBlock = false;
-    document.onkeydown = tempFunctionDocument;
+    focusBlock = true;
+   // document.onkeydown = tempFunctionDocument;
   }
   // functions for addition symbols in console
   function insertAfter(elem, refElem) 
