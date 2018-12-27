@@ -8,13 +8,22 @@ function console(object)
   var currentPosition = 0;
   var blockConsole = false;
   var positionAutoScroll = 9999;
+  var tempFunctionDocument = document.onkeydown;
 
   var nullSymbol = document.createElement('SPAN');
   object.appendChild(nullSymbol);
   object.oncontextmenu = function(){return false;}
   backPosition = nullSymbol;
   // ---
-
+  object.onfocus = function()
+  {
+    tempFunctionDocument = document.onkeydown;
+    document.onkeydown = function(){ return false; }
+  }
+  object.onblur = function()
+  {
+    document.onkeydown = tempFunctionDocument;
+  }
   // functions for addition symbols in console
   function insertAfter(elem, refElem) 
   {
