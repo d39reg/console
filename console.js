@@ -20,7 +20,7 @@ function console(object)
   object.onfocus = function()
   {
     tempFunctionDocument = document.onkeydown;
-    focusBlock = false;
+    //focusBlock = false;
     document.onkeydown = function(){ return false; }
   }
   object.onblur = function()
