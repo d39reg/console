@@ -25,7 +25,7 @@ function console(object)
   }
   object.onblur = function()
   {
-    focusBlock = false;
+    //focusBlock = false;
     document.onkeydown = tempFunctionDocument;
   }
   // functions for addition symbols in console
