@@ -10,6 +10,7 @@ function console(object)
   var positionAutoScroll = 9999;
   var focusBlock = true;
   var tempFunctionDocument = document.onkeydown;
+  var tempBlink = true;
 
   var nullSymbol = document.createElement('SPAN');
   object.setAttribute('tabindex','-1');
@@ -19,14 +20,17 @@ function console(object)
   // ---
   object.onfocus = function()
   {
-    tempFunctionDocument = document.onkeydown;
+    //tempFunctionDocument = document.onkeydown;
     focusBlock = false;
-   // document.onkeydown = function(){ return false; }
+    globalThis.blink = tempBlink;
+    //document.onkeydown = function(){ return false; }
   }
   object.onblur = function()
   {
-    focusBlock = true;
-   // document.onkeydown = tempFunctionDocument;
+    focusBlock = false;
+    tempBlink = globalThis.blink;
+    globalThis.blink = false;
+    //document.onkeydown = tempFunctionDocument;
   }
   // functions for addition symbols in console
   function insertAfter(elem, refElem) 
