@@ -251,6 +251,7 @@ function console(object)
         globalThis.right();
       break;
     }
+    return false;
   });
   var countTurn = true;
   setInterval(function()
