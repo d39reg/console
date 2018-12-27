@@ -119,6 +119,7 @@ function console(object)
       {
         var o = document.createElement('SPAN');
         o.className = "symbol";
+        o.onclick = '';
         if(bold) o.style.fontWeight = 'bold';
         if(color != undefined) o.style.color = color;
         else o.style.color = globalThis.color;
