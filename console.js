@@ -20,12 +20,12 @@ function console(object)
   object.onfocus = function()
   {
     tempFunctionDocument = document.onkeydown;
-    focusBlock = true;
+    focusBlock = false;
     document.onkeydown = function(){ return false; }
   }
   object.onblur = function()
   {
-    focusBlock = false;
+    focusBlock = true;
     document.onkeydown = tempFunctionDocument;
   }
   // functions for addition symbols in console
