@@ -8,7 +8,7 @@ function console(object)
   var currentPosition = 0;
   var blockConsole = false;
   var positionAutoScroll = 9999;
-  var focusBlock = true;
+  var focusBlock = false;
   var tempFunctionDocument = document.onkeydown;
 
   var nullSymbol = document.createElement('SPAN');
