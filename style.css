@@ -20,6 +20,7 @@ div.console
   word-wrap: break-word;
   overflow-wrap: break-word;
   cursor: default;
+  outline: none;
 }
 div.console span.symbol
 {
