@@ -197,7 +197,7 @@ function console(object)
       break;
       case 9: // tab
         if(blockConsole) return false;
-        var o = document.createElement("SPAN");
+        /*var o = document.createElement("SPAN");
         o.className = "symbol right";
         o.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";
         o.style.color = globalThis.color;
@@ -210,7 +210,7 @@ function console(object)
 
         backPosition = o;
         arrayPosition.splice(currentPosition++,0,o);
-        object.scrollTop = positionAutoScroll;
+        object.scrollTop = positionAutoScroll;*/
         event.preventDefault();
         return false;
       break;
